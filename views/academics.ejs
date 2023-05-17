@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Academics</title>
+	<style>
+		table{
+			width:100%;
+			background-color: rgb(240, 227, 227);
+			border-radius: 15px;
+			box-shadow: 0 0 40px rgba(218, 173, 173, 0.6);
+
+		}
+		th,td{
+        font-size: larger;
+        font-family: 'Times New Roman', Times, serif;
+		/* padding-left: 5%;  */
+		/* padding-right: 6%; */
+	    text-align: center;
+		padding-bottom: 6%;
+        padding-top: 3%;
+		/* width:100px; */
+      }
+      #ci{
+		  width:13px;
+		  padding-left: 0%;
+	  }
+	  #syll{
+		  width:120px;
+	  }
+	  #cn,#res{
+		  width:30px;
+	  }
+	  nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 10vh;
+		background-color: #333;
+		color: #fff;
+		padding: 0 1rem;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 999;
+		}
+
+		.nav-links {
+		display: flex;
+		justify-content: space-around;
+		width: 30%;
+		}
+        .nav-links li{
+			list-style-type: none;
+			padding: 3%;
+		}
+		.nav-links li a {
+		font-size: 1.2rem;
+		/* text-transform: uppercase; */
+		text-decoration: none;
+		letter-spacing: 1px;
+		color:blanchedalmond;
+		}
+
+		.burger {
+		display: none;
+		cursor: pointer;
+		}
+
+		.burger div {
+		width: 25px;
+		height: 3px;
+		margin: 5px;
+		background-color: #fff;
+		}
+
+		@media screen and (max-width: 768px) {
+			.nav-links {
+				width: 60%;
+			}
+
+			.burger {
+				display: block;
+			}
+
+			.nav-active {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				height: 90vh;
+				position: absolute;
+				top: 10vh;
+				left: 0;
+				z-index: 1;
+				background-color: #333;
+				transition: all 0.5s ease-in-out;
+			}
+
+			.nav-active li {
+				opacity: 0;
+			}
+
+			.nav-active li a {
+				font-size: 2rem;
+			}
+
+			.burger .line {
+				width: 25px;
+				height: 3px;
+				margin: 5px;
+				background-color: #fff;
+				transition: all 0.5s ease-in-out;
+			}
+
+			.toggle .line1 {
+				transform: rotate(-45deg) translate(-5px, 6px);
+			}
+
+			.toggle .line2 {
+				opacity: 0;
+			}
+
+			.toggle .line3 {
+				transform: rotate(45deg) translate(-5px, -6px);
+			}
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<!-- <div class="logo">
+		  <a href="#">Logo</a>
+		</div> -->
+		<ul class="nav-links">
+		  <li><a href="/academics/mentor">Mentor</a></li>
+		  <li><a href="/academics/attendance">Attendance</a></li>
+		  <li><a href="/academics/bonafide">BonafideRequest</a></li>
+		  <li><a href="/academics/timetable">Timetable</a></li>
+		</ul>
+		<div class="burger">
+		  <div class="line"></div>
+		  <div class="line"></div>
+		  <div class="line"></div>
+		</div>
+	  </nav>	  
+	<h1>Academics</h1>
+	<table>
+		<tr>
+			<th id="ci">Course ID</th>
+			<th id="cn">Course Name</th>
+			<th id="syll">syllabus</th>
+			<th id="res">credits</th>
+		</tr>
+		<% datas.forEach(function(data) { %>
+			<tr>
+				<td id ="ci"><%= data.cid %></td>
+				<td id="cn"><%= data.cname %></td>
+				<td id="syll"><%= data.syllabus %></td>
+				<td id="cn"><%= data.credits %></td>
+			</tr>
+		<% }); %>
+	</table>
+	<script>
+		const burger = document.querySelector('.burger');
+		const nav = document.querySelector('.nav-links');
+		const navLinks = document.querySelectorAll('.nav-links li');
+
+		burger.addEventListener('click', () => {
+		// Toggle Nav
+		nav.classList.toggle('nav-active');
+
+		// Animate Links
+		navLinks.forEach((link, index) => {
+			if (link.style.animation) {
+			link.style.animation = '';
+			} else {
+			link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+			}
+		});
+	});
+	</script>
+</body>
+</html>
+		

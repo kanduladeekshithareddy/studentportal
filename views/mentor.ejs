@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor</title>
+    <style>
+        body{
+            background-color: rgb(240, 227, 227);
+        }
+        table{
+            width:50%;
+            background-color:#e6b282;
+            border-radius: 15px;
+            margin-left:25%;
+            margin-top: 5%;
+            box-shadow: 0 0 40px rgba(194, 167, 136, 0.6);
+        }
+        th,td{
+            padding-top: 2%;
+            text-align: center;
+        }
+        /* .card{
+            background-color: rgb(223, 202, 188);
+            
+            border-radius: 5px;
+        } */
+        .backcol{
+            margin-top: 5%;
+            margin-left: 23%;
+            margin-right: 23%;
+            padding-bottom: 2%;
+            padding-top: 2%;
+            /* background-color: #F2B6A0; */
+            background: linear-gradient(50deg, #f6c5a4, #ffa743 );
+            border-radius: 38px;
+            position:relative;
+        }
+        label {
+            padding-top: 2%;
+        display: block;
+        margin-bottom: 10px;
+        margin-left: 25%;
+        }
+
+        input[type="email"],
+        input[type="text"] {
+        padding: 10px;
+        margin-left: 25%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        width: 50%;
+        margin-bottom: 20px;
+        }
+
+        input[type="email"]:focus,
+        input[type="text"]:focus {
+        border-color: #555;
+        }
+
+        button[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 35%;
+        }
+
+        button[type="submit"]:hover {
+        background-color: #45a049;
+        }
+        h1{
+            font-size: 20px; /* sets the font size to 36 pixels */
+            color: #333; /* sets the color to dark grey */
+            font-weight: bold; /* makes the text bold */
+            text-align: center; /* centers the text */
+            text-transform: uppercase; /* converts the text to all uppercase */
+            margin-bottom: 20px; /* adds a 20 pixel margin below the heading */
+            background-color: #333;
+		color: #fff;
+            border-radius: 5px;
+            padding:2%;
+            }
+    </style>
+</head>
+<body>
+        <a href="/acedemics"><h1>Mentors</h1></a>
+    <table>
+        <tr>
+            <th>mentor name </th>
+            <th>course id</th>
+            <th>mentor email</th>
+        </tr>
+        <% item.forEach(function(data) { %>
+			<tr>
+				<td id ="ci"><%= data.mname %></td>
+				<td id="cn"><%= data.cid %></td>
+                <td>
+                    <p><a type="email" href="mailto:<%= data.memail%>"><%= data.memail%></a></p> 
+                </td>
+			</tr>
+		<% }); %>
+    </table>
+    <nav>
+
+      <div class="backcol">
+      <form action="/academics/mentor" method="POST">
+        <label for="email">Enter Email:</label>
+        <input type="email" id="email" name="email" placeholder="enter email id" required>
+        <br>
+        <label for="text">enter Query:</label>
+        <input type="text" id="text" name="query" placeholder="enter your query">
+        <br>
+        <button type="submit">Send Email</button>
+      </form>
+      </div>
+      
+</body>
+</html>

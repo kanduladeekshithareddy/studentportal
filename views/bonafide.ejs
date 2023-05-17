@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bonafide application</title>
+</head>
+<style>
+    body{
+        background-color: rgb(240, 227, 227);
+    }
+    h1{
+            font-size: 20px; /* sets the font size to 36 pixels */
+            color: #333; /* sets the color to dark grey */
+            font-weight: bold; /* makes the text bold */
+            text-align: center; /* centers the text */
+            text-transform: uppercase; /* converts the text to all uppercase */
+            margin-bottom: 20px; /* adds a 20 pixel margin below the heading */
+            background-color: #333;
+		color: #fff;
+            border-radius: 5px;
+            padding:2%;
+            }
+            .backcol{
+            margin-top: 5%;
+            margin-left: 23%;
+            margin-right: 23%;
+            padding-bottom: 2%;
+            padding-top: 2%;
+            background-color: rgb(236, 196, 130) ;
+            /* background: linear-gradient(50deg, #f8cbcb, #e7a2a2 ); */
+            border-radius: 38px;
+            position:relative;
+        }
+        label {
+            padding-top: 2%;
+        display: block;
+        margin-bottom: 10px;
+        margin-left: 25%;
+        }
+
+       textarea{
+        padding: 10px;
+        margin-left: 25%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        width: 50%;
+        height:150px;
+        margin-bottom: 20px;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+        }
+
+        input[type="email"]:focus,
+        input[type="text"]:focus {
+        border-color: #555;
+        }
+
+        button[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-left: 35%;
+        }
+
+        button[type="submit"]:hover {
+        background-color: #45a049;
+        }
+</style>
+<body>
+    <a href="/acedemics"><h1>Bonafide Request</h1></a>
+    <div class="backcol">
+        <form action="/academics/bonafide" method="POST">
+          <label for="text">enter Query:</label>
+          <!-- <input type="text" id="text" name="query" placeholder="enter your query" height="50px"> -->
+          <br>
+          <textarea placeholder="enter request" name="bon"></textarea>
+          <button type="submit">Send Email</button>
+        </form>
+        </div>
+</body>
+</html>

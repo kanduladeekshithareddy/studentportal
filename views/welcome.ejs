@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile of Student </title>
+    <style>
+      body{
+        background-color: rgb(240, 227, 227);
+    }
+      img{
+        position:absolute;
+        z-index:1;
+        width:50px;
+        margin-right: 5%;
+      }
+      a.nav-link{
+        padding-left: 1.5rem;
+      }
+      #my .navbar-nav .nav-link {
+          padding-right: 0.5rem;
+          padding-left: 2.5rem;
+      }
+      #na{
+        padding-top: 3%;
+      }
+      #obj{
+          margin-right:5px;
+          padding-left:5px;
+          background-color: antiquewhite;
+          list-style: none;
+      }
+      /* tbody{
+        display:contents;
+      } */
+      table{
+        margin-top:5%;
+        width:50%;
+        padding-left:2%;
+        margin-left:30%;
+        border-radius: 10px;
+        background-color: beige;
+        box-shadow: 0 0 40px rgba(193, 231, 188, 0.6);
+
+      }
+      td{
+        font-size: larger;
+        font-family: 'Times New Roman', Times, serif;
+        padding-bottom: 5%;
+        padding-left: 10%;
+        padding-top: 3%;
+      }
+      .dropdown-menu {
+          display: none;
+          position: absolute;
+          z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-menu {
+          display: block;
+          background-color: rgb(58, 57, 57);
+          padding-top: 2%;
+          margin-left: 5%;
+        }
+
+        .dropdown-menu li {
+          display: block;
+        }
+
+    </style>
+  </head>
+  <body>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap Nav Bar Example</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+  <img src="assets/logo.png" alt="" srcset="" >
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="my">
+    <a class="navbar-brand" href="/welcome"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link"  href="/welcome">Home</a>
+        </li>
+        <li class="nav-item">
+          <!-- <ul class="dropdown"> -->
+          <a class="nav-link"   href="/acedemics">academics</a>
+          <!-- <ul class="dropdown-menu">
+              <li><a href="/academics/mentor">Mentorhelp</a></li>
+              <li><a href="#">Item 2</a></li>
+              <li><a href="#">Item 3</a></li>
+            </ul> -->
+          <!-- </ul> -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"   href="/examsection">examsection</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"   href="/feesection">College News</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"   href="/">logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+   
+  <ul>
+    <% data.forEach(function(row) { %>
+    <h1 id="na">Hello <%= row.sname %></h1> 
+      <table>
+        <tr>
+          <td>Student Name</td>
+          <td><%=row.sname %></td>
+        </tr>
+        <tr>
+          <td>RollNumber:</td>
+          <td><%=row.rollnumber %></td>
+        </tr>
+        <tr>
+          <td>Registration Number</td>
+          <td><%=row.regnumber %></td>
+        </tr>
+        <tr>
+          <td>Branch:</td>
+          <td><%=row.bname %></td>
+        </tr>
+        <tr>
+          <td>Year:</td>
+          <td><%=row.syear %></td>
+        </tr>
+        <tr>
+          <td>Gender:</td>
+          <td><%=row.gender %></td>
+        </tr>
+        <tr>
+          <td>Department:</td>
+          <td><%=row.dname %></td>
+        </tr>
+        <tr>
+          <td>Date of Birth</td>
+          <td><%=row.dob.toLocaleDateString('en-US')%></td>
+        </tr>
+        <tr>
+          <td>Village</td>
+          <td><%=row.street %></td>
+        </tr>
+        <tr>
+          <td>District</td>
+          <td><%=row.district %></td>
+        </tr>
+        <tr>
+          <td>State</td>
+          <td><%=row.state%></td>
+        </tr>
+      </table>
+    <% }); %>
+  </ul>
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

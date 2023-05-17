@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+    <style>
+        body{
+        background-color: rgb(240, 227, 227);
+    }
+    h1{
+            font-size: 20px; /* sets the font size to 36 pixels */
+            color: #333; /* sets the color to dark grey */
+            font-weight: bold; /* makes the text bold */
+            text-align: center; /* centers the text */
+            text-transform: uppercase; /* converts the text to all uppercase */
+            margin-bottom: 20px; /* adds a 20 pixel margin below the heading */
+            background-color: #333;
+		color: #fff;
+            border-radius: 5px;
+            padding:2%;
+            }
+        table{
+            width:50%;
+            background-color: rgb(238, 195, 173);
+            border-radius: 15px;
+            margin-left:25%;
+            margin-top:5%;
+            box-shadow: 0 0 40px rgba(238, 202, 168, 0.6);
+        }
+        th,td{
+            padding-top: 2%;
+            padding-bottom: 2%;
+            text-align: center;
+        }
+    </style>
+<body>
+    <h1>Results</h1>    
+    <table>
+        <tr>
+            <th>course id </th>
+            <th>grades</th>
+        </tr>
+        <% erdata.forEach(function(data) { %>
+			<tr>
+				<td id ="ci"><%= data.cid %></td>
+                <td id ="ci"><%= data.grades %></td>
+			</tr>
+		<% }); %>
+        <% erdata.forEach(function(datar) { %>
+            <% if (datar.grades === 'F') { %>
+                <script>
+                    alert("You have failed the exam and have been put on backlog in <%= datar.cid %>Please contact your department for further information.");
+                 </script>
+                 <!-- <p>You have failed the exam and have been put on backlog in <%= datar.grades %> .Please contact your department for further information.</p> -->
+             <% } %>
+         <% }); %>
+    </table>
+</body>
+</html>
